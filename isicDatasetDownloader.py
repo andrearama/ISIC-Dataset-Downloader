@@ -50,7 +50,7 @@ def getImageClass(imageId):
     imageDetailsDownloadUrl = imageDetailsDownloadBaseUrl+imageId
     try:
         imageDetails = getTheUrl(imageDetailsDownloadUrl)
-        imageClass = imageDetails["meta"]["clinical"]["benign_malignant"]
+        imageClass = imageDetails["meta"]["clinical"]["benign_malignant"]+imageDetails["meta"]["clinical"]["diagnosis"]
         if(imageClass is None):
             return "_Null_Class_"
         else:
